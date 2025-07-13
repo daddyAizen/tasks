@@ -1,4 +1,4 @@
-# ✅ Task Management System
+# Task Sasa Management Sys
 
 This is a simple Task Management System built with **Laravel (backend)** and **Vue 3 + Inertia.js (frontend)**. It supports user authentication, task creation, and task status management. Admins can view all tasks and users, while regular users can only view their assigned tasks.
 
@@ -51,3 +51,4 @@ php artisan migrate
 
 # 7. Build frontend assets
 composer run dev
+```

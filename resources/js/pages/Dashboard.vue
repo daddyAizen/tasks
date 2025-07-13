@@ -267,7 +267,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                     <p class="mb-4 font-semibold text-green-500">All completed</p>
 
                     <!-- Scrollable wrapper -->
-                    <div class="max-h-64 overflow-y-auto pr-2">
+                    <div class="max-h-100 overflow-y-auto pr-2">
                         <div v-if="tasks.completed && tasks.completed.length > 0">
                             <!-- Item -->
                             <div v-for="tasks in tasks.completed" :key="tasks.id" class="group relative mb-6 flex gap-x-5">
@@ -319,7 +319,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                     <p class="mb-4 font-semibold text-blue-500">All in progress</p>
 
                     <!-- Scrollable wrapper -->
-                    <div class="max-h-64 overflow-y-auto pr-2">
+                    <div class="max-h-100 overflow-y-auto pr-2">
                         <div v-if="tasks.in_progress && tasks.in_progress.length > 0">
                             <!-- Item -->
                             <div v-for="tasks in tasks.in_progress" :key="tasks.id" class="group relative mb-6 flex gap-x-5">
@@ -371,7 +371,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                     <p class="mb-4 font-semibold text-red-500">All pending tasks</p>
 
                     <!-- Scrollable wrapper -->
-                    <div class="max-h-64 overflow-y-auto pr-2">
+                    <div class="max-h-100 overflow-y-auto pr-2">
                         <div v-if="tasks.pending && tasks.pending.length > 0">
                             <!-- Item -->
                             <div v-for="tasks in tasks.pending" :key="tasks.id" class="group relative mb-6 flex gap-x-5">
