@@ -4,21 +4,19 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\DashboardController;
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('home');
 
-Route::get('dashboard', function () {
-    $user = auth()->user();
 
-    if ($user->role === 'admin') {
-        return Inertia::render('Dashboard');
-    }
 
-    // ✅ This ensures props are passed
-    return app(TaskController::class)->userDashboard();
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/user/dashboard', [TaskController::class, 'userDashboard'])->name('user.dashboard');

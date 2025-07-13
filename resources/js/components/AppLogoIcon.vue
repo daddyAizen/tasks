@@ -13,12 +13,26 @@ defineProps<Props>();
 </script>
 
 <template>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 42" :class="className" v-bind="$attrs">
-        <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M17.2 5.633 8.6.855 0 5.633v26.51l16.2 9 16.2-9v-8.442l7.6-4.223V9.856l-8.6-4.777-8.6 4.777V18.3l-5.6 3.111V5.633ZM38 18.301l-5.6 3.11v-6.157l5.6-3.11V18.3Zm-1.06-7.856-5.54 3.078-5.54-3.079 5.54-3.078 5.54 3.079ZM24.8 18.3v-6.157l5.6 3.111v6.158L24.8 18.3Zm-1 1.732 5.54 3.078-13.14 7.302-5.54-3.078 13.14-7.3v-.002Zm-16.2 7.89 7.6 4.222V38.3L2 30.966V7.92l5.6 3.111v16.892ZM8.6 9.3 3.06 6.222 8.6 3.143l5.54 3.08L8.6 9.3Zm21.8 15.51-13.2 7.334V38.3l13.2-7.334v-6.156ZM9.6 11.034l5.6-3.11v14.6l-5.6 3.11v-14.6Z"
-        />
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-fingerprint-icon lucide-fingerprint"
+    >
+        <path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4" />
+        <path d="M14 13.12c0 2.38 0 6.38-1 8.88" />
+        <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02" />
+        <path d="M2 12a10 10 0 0 1 18-6" />
+        <path d="M2 16h.01" />
+        <path d="M21.8 16c.2-2 .131-5.354 0-6" />
+        <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2" />
+        <path d="M8.65 22c.21-.66.45-1.32.57-2" />
+        <path d="M9 6.8a6 6 0 0 1 9 5.2v2" />
     </svg>
 </template>

@@ -3,7 +3,7 @@ import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import { Link, usePage } from '@inertiajs/vue3';
 
 const page = usePage();
-const name = page.props.name;
+
 const quote = page.props.quote;
 
 defineProps<{
@@ -18,12 +18,12 @@ defineProps<{
             <div class="absolute inset-0 bg-zinc-900" />
             <Link :href="route('home')" class="relative z-20 flex items-center text-lg font-medium">
                 <AppLogoIcon class="mr-2 size-8 fill-current text-white" />
-                {{ name }}
+                Task Sasa
             </Link>
             <div v-if="quote" class="relative z-20 mt-auto">
                 <blockquote class="space-y-2">
-                    <p class="text-lg">&ldquo;{{ quote.message }}&rdquo;</p>
-                    <footer class="text-sm text-neutral-300">{{ quote.author }}</footer>
+                    <p class="text-lg">&ldquo;A task a day keeps the Project Manager away &rdquo;</p>
+                    <footer class="text-sm text-neutral-300">Donald Edwin</footer>
                 </blockquote>
             </div>
         </div>

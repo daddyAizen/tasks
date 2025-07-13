@@ -18,6 +18,9 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): Response
     {
+        if ($request->user()->role !== 'admin') {
+            abort(403); // Or: return redirect()->route('dashboard')->with('error', 'Access denied.');
+        }
         return Inertia::render('settings/Profile', [
             'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
             'status' => $request->session()->get('status'),

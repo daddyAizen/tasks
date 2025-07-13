@@ -2,8 +2,10 @@
 import UserInfo from '@/components/UserInfo.vue';
 import { DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
 import type { User } from '@/types';
-import { Link, router } from '@inertiajs/vue3';
+import { Link, router, usePage } from '@inertiajs/vue3';
 import { LogOut, Settings } from 'lucide-vue-next';
+
+const user = usePage().props.auth.user;
 
 interface Props {
     user: User;
@@ -24,7 +26,7 @@ defineProps<Props>();
     </DropdownMenuLabel>
     <DropdownMenuSeparator />
     <DropdownMenuGroup>
-        <DropdownMenuItem :as-child="true">
+        <DropdownMenuItem v-if="user.role === 'admin'" :as-child="true">
             <Link class="block w-full" :href="route('profile.edit')" prefetch as="button">
                 <Settings class="mr-2 h-4 w-4" />
                 Settings
