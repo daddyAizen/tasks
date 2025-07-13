@@ -42,4 +42,4 @@ RUN php artisan config:cache && \
 
 
 
-CMD php artisan serve --host=0.0.0.0 --port=8000
+CMD composer run dev
