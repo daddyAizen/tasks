@@ -2,6 +2,7 @@
 import Button from '@/components/ui/button/Button.vue';
 import Input from '@/components/ui/input/Input.vue';
 import Label from '@/components/ui/label/Label.vue';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
 import { Head, useForm } from '@inertiajs/vue3';
@@ -11,6 +12,7 @@ interface User {
     name: string;
     email: string;
     password: string;
+    role: string;
 }
 
 const props = defineProps<{ user: User }>();
@@ -18,6 +20,7 @@ const props = defineProps<{ user: User }>();
 const form = useForm({
     name: props.user.name,
     email: props.user.email,
+    role: '',
     password: '',
     password_confirmation: '',
 });
@@ -29,7 +32,7 @@ const submit = () => {
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Edit Users',
-        href: '/users/create',
+        href: '/users/edit',
     },
 ];
 </script>
@@ -94,6 +97,24 @@ const breadcrumbs: BreadcrumbItem[] = [
                             placeholder="Confirm password"
                         />
                         <InputError :message="form.errors.password_confirmation" />
+                    </div>
+
+                    <div class="grid gap-2">
+                        <Label for="role">Role</Label>
+                        <Select v-model="form.role">
+                            <SelectTrigger class="w-[180px]">
+                                <SelectValue placeholder="Select a Role" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectGroup>
+                                    <SelectLabel>Roles</SelectLabel>
+                                    <SelectItem value="admin"> admin </SelectItem>
+                                    <SelectItem value="user"> user </SelectItem>
+                                </SelectGroup>
+                            </SelectContent>
+                        </Select>
+
+                        <div v-if="form.errors.role" class="text-sm text-red-500">{{ form.errors.role }}</div>
                     </div>
 
                     <Button type="submit" class="mt-2 w-full" tabindex="5" :disabled="form.processing">
