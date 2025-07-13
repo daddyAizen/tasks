@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
 import { type BreadcrumbItem } from '@/types';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 
 interface Task {
     id: number;
@@ -62,26 +62,28 @@ const breadcrumbs: BreadcrumbItem[] = [
                                 <div>
                                     <h2 class="text-xl font-semibold text-gray-800 dark:text-neutral-200">Tasks</h2>
                                 </div>
-                                <div class="sm:col-span-2 md:grow">
+                                <div class="md:grow">
                                     <div class="flex justify-end gap-x-2">
-                                        <Button>
-                                            <svg
-                                                class="size-4 shrink-0"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                            >
-                                                <path d="M5 12h14" />
-                                                <path d="M12 5v14" />
-                                            </svg>
-                                            Create Task
-                                        </Button>
+                                        <Link :href="route('tasks.create')">
+                                            <Button>
+                                                <svg
+                                                    class="size-4 shrink-0"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="24"
+                                                    height="24"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                >
+                                                    <path d="M5 12h14" />
+                                                    <path d="M12 5v14" />
+                                                </svg>
+                                                Create Task
+                                            </Button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
