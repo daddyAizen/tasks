@@ -40,7 +40,7 @@ RUN php artisan config:cache && \
     php artisan view:cache
 
 
-RUN mkdir -p /var/data && cp database/database.sqlite /var/data/database.sqlite
+RUN cp /etc/secrets/database.sqlite /var/www/database/database.sqlite
 
 
 CMD php artisan serve --host=0.0.0.0 --port=8000
