@@ -1,12 +1,13 @@
-import path from 'path'
-import vue from '@vitejs/plugin-vue'
-import laravel from 'laravel-vite-plugin'
-import tailwindcss from '@tailwindcss/vite'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import { defineConfig } from 'vite'
+    import path from 'path'
+    import vue from '@vitejs/plugin-vue'
+    import laravel from 'laravel-vite-plugin'
+    import tailwindcss from '@tailwindcss/vite'
+    import Components from 'unplugin-vue-components/vite'
+    import AutoImport from 'unplugin-auto-import/vite'
+    import { defineConfig } from 'vite'
 
-export default defineConfig({
+   export default defineConfig({
+  base: '/build/', // ✅ Add this line
   plugins: [
     laravel({
       input: ['resources/js/app.ts'],
