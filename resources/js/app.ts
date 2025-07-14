@@ -9,8 +9,18 @@ import { ZiggyVue } from 'ziggy-js';
 import { initializeTheme } from './composables/useAppearance';
 import axios from 'axios'
 
-axios.defaults.baseURL = import.meta.env.VITE_APP_URL || 'https://tasksasa.onrender.com'
+axios.defaults.baseURL = '/';
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+
+axios.post('/login', data).catch(err => {
+  console.error({
+    message: err.message,
+    baseURL: err.config.baseURL,
+    url: err.config.url,
+    request: !!err.request,
+    response: err.response ?? 'no response'
+  });
+});
 
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
