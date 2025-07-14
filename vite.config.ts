@@ -7,7 +7,7 @@
     import { defineConfig } from 'vite'
 
    export default defineConfig({
-  base: '/build/', // ✅ Add this line
+  base: '/build/',
   plugins: [
     laravel({
       input: ['resources/js/app.ts'],
