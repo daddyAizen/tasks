@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
 
         if (env('APP_ENV') === 'production') {
             URL::forceScheme('https');
+            URL::forceRootUrl(config('app.url'));
+
         }
 
         Inertia::share('auth.user', fn() => Auth::user());
